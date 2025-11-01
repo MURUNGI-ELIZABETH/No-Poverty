@@ -1,0 +1,351 @@
+/* Simple, readable styles for the site */
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --brand: #0d6efd;
+  --surface: #f3f4f6;
+  --shadow: rgba(0,0,0,0.08);
+}
+
+* { 
+  box-sizing: border-box; 
+}
+
+html, body { 
+  height: 100%; 
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #ffffffcc;
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 12px 0; 
+}
+
+.brand { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 10px; 
+  text-decoration: none; 
+  color: var(--text); 
+  font-weight: 700; 
+}
+
+.brand-logo { 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+.nav { 
+  display: flex; 
+  gap: 16px; 
+}
+
+.nav-link { 
+  text-decoration: none; 
+  color: var(--text); 
+  padding: 8px 10px; 
+  border-radius: 6px; 
+}
+
+.nav-link:hover { 
+  background: var(--surface); 
+}
+
+.nav-link.active { 
+  color: var(--brand); 
+  font-weight: 600; 
+}
+
+/* Hero */
+.hero {
+  color: #fff;
+  background: linear-gradient(rgba(13,110,253,0.7), rgba(13,110,253,0.8)), url('IMAGES/fightpov2.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content { 
+  text-align: center; 
+  padding: 90px 0; 
+}
+
+.hero h1 { 
+  font-size: clamp(2rem, 6vw, 3rem); 
+  margin: 0 0 12px; 
+}
+
+.hero p { 
+  max-width: 700px; 
+  margin: 0 auto 20px; 
+}
+
+.actions { 
+  display: inline-flex; 
+  gap: 12px; 
+  flex-wrap: wrap; 
+}
+
+/* Buttons */
+.btn { 
+  display: inline-block; 
+  padding: 10px 16px; 
+  border-radius: 8px; 
+  background: #fff; 
+  color: var(--brand); 
+  text-decoration: none; 
+  font-weight: 600; 
+}
+
+.btn:hover { 
+  filter: brightness(0.98); 
+}
+
+.btn.btn-outline { 
+  background: transparent; 
+  color: #fff; 
+  border: 2px solid #fff; 
+}
+
+/* Sections */
+.section { 
+  padding: 48px 0; 
+}
+
+.section-light { 
+  background: var(--surface); 
+}
+
+.section-title { 
+  text-align: center; 
+  margin: 0 0 26px; 
+}
+
+.text-center { 
+  text-align: center; 
+}
+
+.small { 
+  font-size: 0.9rem; 
+  color: var(--muted); 
+}
+
+/* Cards & Grids */
+.grid { 
+  display: grid; 
+  gap: 16px; 
+}
+
+.grid-3 { 
+  grid-template-columns: repeat(3, 1fr); 
+}
+
+.grid-2 { 
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+@media (max-width: 900px) { 
+  .grid-3 { 
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+}
+
+@media (max-width: 640px) { 
+  .grid-3, .grid-2 { 
+    grid-template-columns: 1fr; 
+  } 
+}
+
+.card { 
+  border: 1px solid #e5e7eb; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  background: #fff; 
+  box-shadow: 0 6px 20px var(--shadow); 
+  transition: transform 0.2s ease; 
+}
+
+.card:hover { 
+  transform: translateY(-3px); 
+}
+
+.card-img { 
+  width: 100%; 
+  height: 220px; 
+  object-fit: cover; 
+}
+
+.card-body { 
+  padding: 14px 16px; 
+}
+
+.card-title { 
+  margin: 0 0 8px; 
+  font-size: 1.05rem; 
+}
+
+.split-card { 
+  display: flex; 
+  gap: 16px; 
+  border: 1px solid #e5e7eb; 
+  border-radius: 10px; 
+  background: #fff; 
+  overflow: hidden; 
+  box-shadow: 0 6px 20px var(--shadow); 
+}
+
+.split-img { 
+  width: 40%; 
+  object-fit: cover; 
+}
+
+.split-body { 
+  padding: 16px; 
+}
+
+@media (max-width: 640px) { 
+  .split-card { 
+    flex-direction: column; 
+  } 
+  
+  .split-img { 
+    width: 100%; 
+    height: 200px; 
+  } 
+}
+
+/* CTA */
+.cta {
+  color: #fff;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(13,110,253,0.6)), url('IMAGES/overcomepov.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Footer */
+.site-footer { 
+  background: #0f172a; 
+  color: #e5e7eb; 
+  padding: 30px 0; 
+}
+
+.footer-grid { 
+  display: grid; 
+  gap: 16px; 
+  grid-template-columns: repeat(3, 1fr); 
+}
+
+.site-footer a { 
+  color: #e5e7eb; 
+  text-decoration: none; 
+}
+
+.site-footer a:hover { 
+  text-decoration: underline; 
+}
+
+@media (max-width: 900px) { 
+  .footer-grid { 
+    grid-template-columns: 1fr 1fr; 
+  } 
+}
+
+@media (max-width: 640px) { 
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+  } 
+}
+
+/* About & Contact quick styles for later refactors */
+.mission-section { 
+  background: #eef2ff; 
+  border: 1px solid #e5e7eb; 
+  border-radius: 10px; 
+  padding: 24px; 
+}
+
+.team-grid { 
+  display: grid; 
+  gap: 20px; 
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+@media (max-width: 900px) { 
+  .team-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+}
+
+@media (max-width: 640px) { 
+  .team-grid { 
+    grid-template-columns: 1fr; 
+  } 
+}
+
+.team-member { 
+  text-align: center; 
+}
+
+.team-member img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.contact-form { 
+  background: #fff; 
+  border: 1px solid #e5e7eb; 
+  border-radius: 10px; 
+  padding: 20px; 
+  box-shadow: 0 6px 20px var(--shadow); 
+}
+
+.contact-form .field { 
+  margin-bottom: 12px; 
+}
+
+.contact-form label { 
+  display: block; 
+  font-weight: 600; 
+  margin-bottom: 6px; 
+}
+
+.contact-form input, .contact-form textarea { 
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #e5e7eb; 
+  border-radius: 8px; 
+  font: inherit; 
+}
+
+.contact-form button { 
+  margin-top: 8px; 
+}
